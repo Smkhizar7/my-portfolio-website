@@ -31,9 +31,8 @@ export default function Home() {
   const [isBlackListed, setIsBlackListed] = useState(false);
 
   // check if NEXT_PUBLC_BLACKLIST_COUNTRIES is empty
-  const [IsBlackListEmpty, setIsBlackListEmpty] = useState(
-    process.env.NEXT_PUBLIC_BLACKLIST_COUNTRIES === "" ? true : false
-  );
+  const [IsBlackListEmpty, setIsBlackListEmpty] = useState();
+  // process.env.NEXT_PUBLIC_BLACKLIST_COUNTRIES === "" ? true : false
 
   // this userEffect will be called to get the user location, so we can check if he is from the blackList,
   // this will only run if NEXT_PUBLIC_BLACKLIST_COUNTRIES is not empty
@@ -43,11 +42,13 @@ export default function Home() {
         try {
           const IP_Address = async () => {
             return fetch("https://api.ipify.org/?format=json")
-              .then(res => res.json())
-              .then(data => data.ip);
+              .then((res) => res.json())
+              .then((data) => data.ip);
           };
 
-          const response = await fetch("/api/userInfoByIP/" + (await IP_Address())); // Replace with your actual API endpoint
+          const response = await fetch(
+            "/api/userInfoByIP/" + (await IP_Address())
+          ); // Replace with your actual API endpoint
           const data = await response.json();
           setUserData(data);
         } catch (error) {
@@ -66,7 +67,10 @@ export default function Home() {
     if (!IsBlackListEmpty) {
       if (userData) {
         // check if the user country is in the blackList
-        if (process.env.NEXT_PUBLIC_BLACKLIST_COUNTRIES.includes(userData.country)) {
+        if (
+          false
+          // process.env.NEXT_PUBLIC_BLACKLIST_COUNTRIES.includes(userData.country)
+        ) {
           // set isBlackListed to true
           setIsBlackListed(true);
         }
@@ -79,11 +83,24 @@ export default function Home() {
     clearInterval(context.sharedState.userdata.timerCookieRef.current);
     if (typeof window !== "undefined") {
       // remove UserDataPuller project EventListeners
-      window.removeEventListener("resize", context.sharedState.userdata.windowSizeTracker.current);
-      window.removeEventListener("mousemove", context.sharedState.userdata.mousePositionTracker.current, false);
+      window.removeEventListener(
+        "resize",
+        context.sharedState.userdata.windowSizeTracker.current
+      );
+      window.removeEventListener(
+        "mousemove",
+        context.sharedState.userdata.mousePositionTracker.current,
+        false
+      );
       // remove Typing project EventListeners
-      window.removeEventListener("resize", context.sharedState.typing.eventInputLostFocus);
-      document.removeEventListener("keydown", context.sharedState.typing.keyboardEvent);
+      window.removeEventListener(
+        "resize",
+        context.sharedState.typing.eventInputLostFocus
+      );
+      document.removeEventListener(
+        "keydown",
+        context.sharedState.typing.keyboardEvent
+      );
     }
     setTimeout(() => {
       setShowElement(true);
@@ -107,8 +124,8 @@ export default function Home() {
 
   console.log("website is rendering...");
   const meta = {
-    title: "Abdellatif Anaflous - Lead Full Stack Software Engineer",
-    description: `I've been working on Software development for more than 7 years. Get in touch with me to know more.`,
+    title: "Shaikh Muhammad Khizar - Full Stack Software Engineer",
+    description: `I've been working on Software development for more than 3 years. Get in touch with me to know more.`,
     image: "/titofCercle.png",
     type: "website",
   };
@@ -127,26 +144,50 @@ export default function Home() {
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@titofabdo" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
+        <meta name="twitter:image" content={meta.image} /> */}
       </Head>
 
       {!isBlackListed ? (
         <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full ">
-          {context.sharedState.finishedLoading ? <></> : ShowThisCantBeReached ? <ThisCantBeReached /> : <></>}
-          {context.sharedState.finishedLoading ? <></> : ShowElement ? <Startup /> : <></>}
-          <Header finishedLoading={context.sharedState.finishedLoading} sectionsRef={homeRef} />
+          {context.sharedState.finishedLoading ? (
+            <></>
+          ) : ShowThisCantBeReached ? (
+            <ThisCantBeReached />
+          ) : (
+            <></>
+          )}
+          {context.sharedState.finishedLoading ? (
+            <></>
+          ) : ShowElement ? (
+            <Startup />
+          ) : (
+            <></>
+          )}
+          <Header
+            finishedLoading={context.sharedState.finishedLoading}
+            sectionsRef={homeRef}
+          />
           <MyName finishedLoading={context.sharedState.finishedLoading} />
-          <SocialMediaArround finishedLoading={context.sharedState.finishedLoading} />
-          {context.sharedState.finishedLoading ? <AboutMe ref={aboutRef} /> : <></>}
+          <SocialMediaArround
+            finishedLoading={context.sharedState.finishedLoading}
+          />
+          {context.sharedState.finishedLoading ? (
+            <AboutMe ref={aboutRef} />
+          ) : (
+            <></>
+          )}
           {context.sharedState.finishedLoading ? <WhereIHaveWorked /> : <></>}
           {context.sharedState.finishedLoading ? <SomethingIveBuilt /> : <></>}
           {context.sharedState.finishedLoading ? <GetInTouch /> : <></>}
           {context.sharedState.finishedLoading ? (
-            <Footer githubUrl={"https://github.com/hktitof/my-website"} hideSocialsInDesktop={true} />
+            <Footer
+              githubUrl={"https://github.com/hktitof/my-website"}
+              hideSocialsInDesktop={true}
+            />
           ) : (
             <></>
           )}
