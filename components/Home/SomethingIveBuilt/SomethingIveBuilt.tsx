@@ -39,14 +39,14 @@ export default function SomethingIveBuilt() {
         {/* // ?  Project  1 O16 Labs */}
         <div
           data-aos="fade-up"
-          className="relative md:grid md:grid-cols-12 w-full md:h-96  "
+          className="relative flex flex-col lg:grid lg:grid-cols-12 w-full lg:h-[780px] xl:h-[540px] 2xl:h-[400px]"
         >
           {/* Left image */}
           <div
             className="hidden bg-AAprimary z-10  py-4 
-          absolute md:grid grid-cols-12 w-full h-full  content-center "
+          md:relative lg:absolute md:grid grid-cols-12 w-full h-full  content-center "
           >
-            <div className="relative rounded w-full h-full col-start-6 col-span-7 ">
+            <div className="relative rounded w-full h-full col-span-12 lg:col-start-6 lg:col-span-7 xl:col-start-7 xl:col-span-6 2xl:col-start-8 2xl:col-span-5">
               <a
                 href={"https://www.o16labs.com"}
                 target="_blank"
@@ -66,9 +66,9 @@ export default function SomethingIveBuilt() {
           </div>
 
           {/* right Content */}
-          <div className=" md:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
+          <div className=" md:relative lg:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
             {/* background for text in mobile responsive */}
-            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
+            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2 md:hidden">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
@@ -82,7 +82,7 @@ export default function SomethingIveBuilt() {
 
             <div
               className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6   
-            col-span-8 flex flex-col items-start  space-y-3 md:order-1"
+            col-span-12 lg:col-span-6 2xl:col-span-7 flex flex-col items-start  space-y-3 md:order-1"
             >
               <div className="flex flex-col space-y-1  z-10">
                 <span className="text-AAsecondary text-base">o16labs.com</span>
@@ -148,18 +148,15 @@ export default function SomethingIveBuilt() {
           </div>
         </div>
 
-        {/* // ?  Project 2 - YpredictAI */}
+        {/* // ?  Project 2 - ChefZone App */}
 
         <div
           data-aos="fade-up"
-          className="relative md:grid md:grid-cols-12 w-full md:h-96 "
+          className="relative flex flex-col lg:grid lg:grid-cols-12 w-full lg:h-[900px] xl:h-[620px] 2xl:h-[500px] "
         >
           {/* Left image */}
-          <div
-            className="hidden bg-AAprimary z-10  py-4 
-          absolute md:grid grid-cols-12 w-full h-full  content-center"
-          >
-            <div className="relative rounded w-full h-full col-span-7 ">
+          <div className="hidden bg-AAprimary z-10  py-4 md:relative lg:absolute md:grid grid-cols-12 w-full h-full md:h-[400px] lg:h-full  content-center">
+            <div className="relative rounded w-full h-full col-span-12 lg:col-span-4 ">
               {/* <Link href={"/typing"}>
                 <div
                   // onClick={}
@@ -169,7 +166,7 @@ export default function SomethingIveBuilt() {
               </Link> */}
 
               <a
-                href="https://ubiquitous-bublanina-da84ec.netlify.app/"
+                href="https://chefzone.co.uk/"
                 target={"_blank"}
                 rel="noreferrer"
               >
@@ -181,35 +178,35 @@ export default function SomethingIveBuilt() {
               </a>
 
               <Img
-                src={"/img/YPredict-v1.jpg"}
+                src={"/ChefzoneApp-transparent.png"}
                 alt={"Project Screen shot"}
-                className={`w-full rounded h-full `}
+                className={`w-full rounded h-full object-contain md:h-[400px] lg:h-[600px] xl:h-[520px] 2xl:h-[400px]`}
               />
             </div>
           </div>
 
           {/* right Content */}
-          <div className=" md:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
+          <div className=" md:relative lg:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
             {/* background for text in mobile responsive */}
-            <div className="absolute w-full h-full bg-opacity-70 z-0">
+            <div className="absolute w-full h-full bg-opacity-70 z-0 md:hidden">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
                 <Img
-                  src={"/img/YPredict-v1.jpg"}
+                  src={"/ChefzoneApp-transparent.png"}
                   alt={"Project Screen shot"}
-                  className={`w-full h-full `}
+                  className={`w-full h-full object-contain`}
                 />
               </div>
             </div>
 
             <div
-              className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5 
-            col-span-8 flex flex-col items-start md:items-end space-y-3"
+              className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-8 xl:col-start-5 lg:col-start-5 
+            lg:col-span-8 col-span-12 flex flex-col items-start md:items-end space-y-3"
             >
               <div className="flex flex-col space-y-1 md:items-end z-10">
                 <span className="text-AAsecondary text-base">
-                  Recent Project
+                  chefzone.co.uk
                 </span>
                 <a
                   href="https://ubiquitous-bublanina-da84ec.netlify.app/"
@@ -217,522 +214,73 @@ export default function SomethingIveBuilt() {
                   rel="noopener noreferrer"
                 >
                   <span className=" md:text-gray-200 text-AAsecondary font-bold text-xl hover:cursor-pointer">
-                    YPredict - v1
+                    ChefZone App
                   </span>
                 </a>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
                 <p className="text-gray-300 md:text-gray-400 text-left ">
-                  I had the opportunity to lead the development of a token
-                  project, which aimed to create a decentralized ecosystem for
-                  peer-to-peer transactions. Overseeing the planning and
-                  development of the project, including the{" "}
-                  <span className="text-AAsecondary"> design</span> and
-                  implementation of the{" "}
-                  <span className="text-AAsecondary"> smart contract</span> and{" "}
-                  <span className="text-AAsecondary">
-                    {" "}
-                    blockchain technology
-                  </span>
-                  . Here i share with you{" "}
-                  <span className="text-AAsecondary"> YPredict - v1 </span> for
-                  the private sale.
+                  This project involved the development of a comprehensive
+                  platform for the hospitality industry, comprising a mobile
+                  application for job seekers and a web admin panel for
+                  administrators. My primary contribution was focused on
+                  building the core functionality and integrating key features
+                  of the <span className="text-AAsecondary">React Native</span>{" "}
+                  mobile application.
+                </p>
+                <p className="text-gray-300 md:text-gray-400 text-left ">
+                  I was responsible for developing the complete user-facing
+                  mobile experience, from the sign-up and application processes
+                  to managing personal job records. Using{" "}
+                  <span className="text-AAsecondary">Redux</span> for state
+                  management, I architected a robust data flow that allowed job
+                  seekers to seamlessly view available positions, apply for jobs
+                  with specific shifts, and track their application status in
+                  real-time. I also integrated{" "}
+                  <span className="text-AAsecondary">Async Storage</span> to
+                  persist user data and application state locally, ensuring a
+                  smooth and responsive experience even with intermittent
+                  network connectivity.
+                </p>
+                <p className="text-gray-300 md:text-gray-400 text-left ">
+                  A significant part of my work involved building out the core
+                  features that directly benefit the user, such as a dedicated
+                  section for viewing and managing applied jobs, a timesheet
+                  tracking system to monitor hours worked, and a pay record
+                  management system to keep track of earnings. This required
+                  extensive{" "}
+                  <span className="text-AAsecondary">API integration</span> to
+                  communicate with the back-end, fetching job postings, sending
+                  application data, and receiving timesheet and pay information.
+                  This project highlights my expertise in building and
+                  integrating complex mobile applications with React Native, my
+                  proficiency in state management with Redux, and my ability to
+                  create a user-friendly and functional experience for
+                  end-users, with a specific focus on real-time data flow
+                  through <span className="text-AAsecondary">Socket.IO</span>.
                 </p>
               </div>
               <ul
                 className="flex flex-wrap w-full text-gray-300 md:text-gray-400
                text-sm font-Text2 md:justify-end"
               >
-                <span className="pr-4 z-10">Token</span>
-                <span className="pr-4 z-10">ERC20</span>
-                <span className="pr-4 z-10">Nextjs</span>
-                <span className="pr-4 z-10">Smart contract</span>
-                <span className="pr-4 z-10">Blockchain</span>
+                <span className="pr-4 z-10">React Native</span>
+                <span className="pr-4 z-10">Redux</span>
+                <span className="pr-4 z-10">Async Storage</span>
+                <span className="pr-4 z-10">API integration</span>
+                <span className="pr-4 z-10">Socket.IO</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 ">
                 <div className="z-10 flex fle-row space-x-5 ">
-                  <GithubIcon link="https://github.com/hktitof/Ypredict" />
+                  {/* <GithubIcon link="https://github.com/hktitof/Ypredict" /> */}
                   <a
-                    href="https://ubiquitous-bublanina-da84ec.netlify.app/"
+                    href="https://play.google.com/store/apps/details?id=com.Chefzonechefslimited&hl=en"
                     target={"_blank"}
                     rel="noreferrer"
                   >
                     <ExternalLink url={""} router={router} />
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* // ?  Project 2 - FeverTokens */}
-        <div
-          data-aos="fade-up"
-          className="relative md:grid md:grid-cols-12 w-full md:h-96  "
-        >
-          {/* Left image */}
-          <div
-            className="hidden bg-AAprimary z-10  py-4 
-          absolute md:grid grid-cols-12 w-full h-full  content-center "
-          >
-            <div className="relative rounded w-full h-full col-start-6 col-span-7 ">
-              <a
-                href={"https://www.fevertokens.io/"}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div
-                  className="absolute w-full h-full rounded bg-AAprimary 
-           transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"
-                ></div>
-              </a>
-              <Img
-                src={"/img/feverTokens.png"}
-                alt={"Project Screen shot"}
-                className={`w-full rounded h-full `}
-              />
-            </div>
-          </div>
-
-          {/* right Content */}
-          <div className=" md:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
-            {/* background for text in mobile responsive */}
-            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
-              <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
-                <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <Img
-                  src={"/feverTokens.jpg"}
-                  alt={"Project Screen shot"}
-                  className={`w-full h-full`}
-                />
-              </div>
-            </div>
-
-            <div
-              className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6   
-            col-span-8 flex flex-col items-start  space-y-3 md:order-1"
-            >
-              <div className="flex flex-col space-y-1  z-10">
-                <span className="text-AAsecondary text-base">
-                  Recent Project
-                </span>
-                <a
-                  href="https://www.fevertokens.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className=" md:text-gray-200 text-AAsecondary font-bold text-xl hover:cursor-pointer">
-                    FeverTokens
-                  </span>
-                </a>
-              </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left">
-                  I played a key role in developing an NFT marketplace project,
-                  focused on creating a decentralized platform with scalable{" "}
-                  <span className="text-AAsecondary"> smart contracts</span> and{" "}
-                  <span className="text-AAsecondary">
-                    {" "}
-                    blockchain technology
-                  </span>
-                  . This platform,{" "}
-                  <span className="text-AAsecondary"> FeverTokens - v2</span>,
-                  was showcased at the VivaTech2022 event in Paris, providing
-                  builders with tools to develop scalable Web3 applications.
-                </p>
-              </div>
-              <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
-               text-sm font-Text2 md:justify-start"
-              >
-                <span className="pr-4 z-10">Tokenization</span>
-                <span className="pr-4 z-10">ERC721</span>
-                <span className="pr-4 z-10">Solidity</span>
-                <span className="pr-4 z-10">Smart Contracts</span>
-                <span className="pr-4 z-10">Blockchain</span>
-              </ul>
-              <div className="z-10 flex fle-row space-x-5 ">
-                {/* <GithubIcon link="https://github.com/hktitof/Ypredict" /> */}
-                <a
-                  href="https://www.fevertokens.io/"
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  <ExternalLink url={""} router={router} />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* // ?  Project  3*/}
-        <div
-          data-aos="fade-up"
-          className="relative md:grid md:grid-cols-12 w-full md:h-96 "
-        >
-          {/* Left image */}
-          <div
-            className="hidden bg-AAprimary z-10  py-4 
-          absolute md:grid grid-cols-12 w-full h-full  content-center"
-          >
-            <div className="relative rounded w-full h-full col-span-7 ">
-              <Link href={"/typing"}>
-                <div
-                  // onClick={}
-                  className="absolute w-full h-full rounded bg-AAsecondary 
-           transition-opacity opacity-10 hover:opacity-0 hover:cursor-pointer duration-300"
-                ></div>
-              </Link>
-
-              <Img
-                src={"/typing.png"}
-                alt={"Project Screen shot"}
-                className={`w-full rounded h-full `}
-              />
-            </div>
-          </div>
-
-          {/* right Content */}
-          <div className=" md:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
-            {/* background for text in mobile responsive */}
-            <div className="absolute w-full h-full bg-opacity-70 z-0">
-              <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
-                <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <Img
-                  src={"/typing.png"}
-                  alt={"Project Screen shot"}
-                  className={`w-full h-full `}
-                />
-              </div>
-            </div>
-
-            <div
-              className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5 
-            col-span-8 flex flex-col items-start md:items-end space-y-3"
-            >
-              <div className="flex flex-col space-y-1 md:items-end z-10">
-                <span className="text-AAsecondary text-base">
-                  Recent Project
-                </span>
-                <Link href={"/typing"}>
-                  <span className=" md:text-gray-200 text-AAsecondary font-bold text-xl hover:cursor-pointer">
-                    Speed Typing
-                  </span>
-                </Link>
-              </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left md:text-right">
-                  This project aim to help you to improve your{" "}
-                  <span className="text-AAsecondary"> typing </span> by tracking
-                  your progress in{" "}
-                  <span className="text-AAsecondary"> each round</span> and give
-                  you a <span className="text-AAsecondary"> score</span> based
-                  on your typing speed and accuracy through a table of{" "}
-                  <span className="text-AAsecondary"> statistics</span>.
-                </p>
-              </div>
-              <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
-               text-sm font-Text2 md:justify-end"
-              >
-                <span className="pr-4 z-10">Algorithms</span>
-                <span className="pr-4 z-10">Framer Motion</span>
-                <span className="pr-4 z-10">Tailwind CSS</span>
-                <span className="pr-4 z-10">TypeScript</span>
-              </ul>
-              <div className="z-10 flex fle-row space-x-5 ">
-                <GithubIcon link="https://github.com/hktitof/Typing" />
-                <ExternalLink url={"typing"} router={router} />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* // ?  Project 4 */}
-        <div
-          data-aos="fade-up"
-          className="relative md:grid md:grid-cols-12 w-full md:h-96  "
-        >
-          {/* Left image */}
-          <div
-            className="hidden bg-AAprimary z-10  py-4 
-          absolute md:grid grid-cols-12 w-full h-full  content-center "
-          >
-            <div className="relative rounded w-full h-full col-start-6 col-span-7 ">
-              <Link href={"/userdatapuller"}>
-                <div
-                  className="absolute w-full h-full rounded bg-AAsecondary 
-           transition-opacity opacity-10 hover:opacity-0 hover:cursor-pointer duration-300"
-                ></div>
-              </Link>
-              <Img
-                src={"/hackme.jpg"}
-                alt={"Project Screen shot"}
-                className={`w-full rounded h-full `}
-              />
-            </div>
-          </div>
-
-          {/* right Content */}
-          <div className=" md:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
-            {/* background for text in mobile responsive */}
-            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
-              <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
-                <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <Img
-                  src={"/hackme.jpg"}
-                  alt={"Project Screen shot"}
-                  className={`w-full h-full`}
-                />
-              </div>
-            </div>
-
-            <div
-              className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6   
-            col-span-8 flex flex-col items-start  space-y-3 md:order-1"
-            >
-              <div className="flex flex-col space-y-1  z-10">
-                <span className="text-AAsecondary text-base">
-                  Recent Project
-                </span>
-                <Link href={"/userdatapuller"}>
-                  <span className=" md:text-gray-200 text-AAsecondary font-bold text-xl hover:cursor-pointer">
-                    User Data puller
-                  </span>
-                </Link>
-              </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left ">
-                  This project allows you to understand how easy it is to
-                  identify and track your browser based on how it appears to
-                  websites. Such as your
-                  <span className="text-AAsecondary"> location</span>,{" "}
-                  <span className="text-AAsecondary">IP Address</span>,{" "}
-                  <span className="text-AAsecondary">
-                    {","} software, Hardware
-                  </span>{" "}
-                  and some additional information with the help of cookies.
-                </p>
-              </div>
-              <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
-               text-sm font-Text2 md:justify-start"
-              >
-                <span className="pr-4 z-10">Cookies</span>
-                <span className="pr-4 z-10">Google APi</span>
-                <span className="pr-4 z-10">Data collecting</span>
-                <span className="pr-4 z-10">IP Address</span>
-                <span className="pr-4 z-10">Location</span>
-              </ul>
-              <div className="z-10 flex fle-row space-x-5 ">
-                <GithubIcon link="https://github.com/hktitof/DataPuller" />
-                <ExternalLink url={"/userdatapuller"} router={router} />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* // ? Project 5 */}
-        <div
-          data-aos="fade-up"
-          className="relative md:grid md:grid-cols-12 w-full md:h-96"
-        >
-          {/* Left image */}
-          <div
-            className="hidden bg-AAprimary z-10  py-4 
-          absolute md:grid grid-cols-12 w-full h-full  content-center"
-          >
-            <div className="relative rounded w-full h-full col-span-7 ">
-              <a
-                href="https://www.haircut.ma"
-                target={"_blank"}
-                rel="noreferrer"
-              >
-                <div
-                  // onClick={}
-                  className="absolute w-full h-full rounded bg-AAprimary 
-           transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"
-                ></div>
-              </a>
-
-              <div className="absolute px-2 bg-AAprimary rounded  ml-4 mt-2 ">
-                <span className="text-AAsecondary text-xl">
-                  In initiation...
-                </span>
-              </div>
-
-              <Img
-                src={"/haircut.png"}
-                alt={"Project Screen shot"}
-                className={`w-full rounded h-full `}
-              />
-            </div>
-          </div>
-
-          {/* right Content */}
-          <div className=" md:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
-            {/* background for text in mobile responsive */}
-            <div className="absolute w-full h-full bg-opacity-70 z-0">
-              <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
-                <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <Img
-                  src={"/haircut.png"}
-                  alt={"Project Screen shot"}
-                  className={`w-full h-full `}
-                />
-              </div>
-            </div>
-            <div className="absolute w-full   rounded  ml-4 mt-2  text-end pr-8">
-              <div className="w-full"></div>
-              <span className="text-AAsecondary sm:text-lg bg-AAprimary px-2 py-1 rounded">
-                In initiation...
-              </span>
-            </div>
-            <div
-              className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6 xl:col-start-7 col-start-5 
-            col-span-8 flex flex-col items-start md:items-end sm:space-y-3 space-y-1"
-            >
-              <div className="flex flex-col space-y-1 md:items-end z-10">
-                <span className="text-AAsecondary text-base">
-                  Recent Project
-                </span>
-                <a
-                  href="https://www.haircut.ma"
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  <span className=" md:text-gray-200 text-AAsecondary font-bold text-xl hover:cursor-pointer">
-                    Haircut Appointment
-                  </span>
-                </a>
-              </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left md:text-right">
-                  It&apos; a barber shop{" "}
-                  <span className="text-AAsecondary">
-                    appointment scheduling
-                  </span>{" "}
-                  & management software it provides{" "}
-                  <span className="text-AAsecondary">online scheduling</span>,
-                  appointment reminders,{" "}
-                  <span className="text-AAsecondary">payments</span>, marketing,
-                  and much more! Currently in the{" "}
-                  <span className="text-AAsecondary">Initiation phase</span>.
-                </p>
-              </div>
-              <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
-               text-sm font-Text2 md:justify-end"
-              >
-                <span className="pr-4 z-10">Appointment</span>
-                <span className="pr-4 z-10">Management</span>
-                <span className="pr-4 z-10">Scheduling</span>
-                <span className="pr-4 z-10">Booking</span>
-              </ul>
-              <div className="z-10 flex fle-row space-x-5 sm:pt-0 pt-2">
-                <GithubIcon link="https://github.com/hktitof/haircut" />
-                <a
-                  href="https://www.haircut.ma"
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  <ExternalLink url={""} router={router} />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* // ?  Project 6 */}
-        <div
-          data-aos="fade-up"
-          className="relative md:grid md:grid-cols-12 w-full md:h-96  "
-        >
-          {/* Left image */}
-          <div
-            className="hidden bg-AAprimary z-10  py-4 
-          absolute md:grid grid-cols-12 w-full h-full  content-center "
-          >
-            <div className="relative rounded w-full h-full col-start-6 col-span-7 ">
-              <a
-                href="https://github.com/hktitof/CallCenter"
-                target={"_blank"}
-                rel="noreferrer"
-              >
-                <div
-                  className="absolute w-full h-full rounded bg-AAprimary 
-           transition-opacity opacity-60 hover:opacity-0 hover:cursor-pointer duration-300"
-                ></div>
-              </a>
-
-              <Img
-                src={"/CallCenter.png"}
-                alt={"Project Screen shot"}
-                className={`w-full rounded h-full `}
-              />
-            </div>
-          </div>
-
-          {/* right Content */}
-          <div className=" md:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
-            {/* background for text in mobile responsive */}
-            <div className="absolute w-full h-full bg-opacity-70 z-0 md:order-2">
-              <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-AAprimary opacity-50 z-10"></div>
-                <div className="absolute w-full h-full bg-AAprimary opacity-80 z-10"></div>
-                <Img
-                  src={"/CallCenter.png"}
-                  alt={"Project Screen shot"}
-                  className={`w-full h-full`}
-                />
-              </div>
-            </div>
-
-            <div
-              className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-6   
-            col-span-8 flex flex-col items-start  sm:space-y-3 md:order-1"
-            >
-              <div className="flex flex-col space-y-1  z-10">
-                <span className="text-AAsecondary text-base">
-                  Recent Project
-                </span>
-                <a
-                  href="https://github.com/hktitof/CallCenter"
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  <span className=" md:text-gray-200 text-AAsecondary font-bold text-xl hover:cursor-pointer">
-                    Call Center Management System
-                  </span>
-                </a>
-              </div>
-              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left ">
-                  A{" "}
-                  <span className="text-AAsecondary">
-                    JavaFX call center management system
-                  </span>{" "}
-                  project it is used for receiving or transmitting a large
-                  volume of enquiries between the agent and the customer,it
-                  handles the communication between agents & clients it can be
-                  used for the both side client & agent side to handle the
-                  messages and issues.
-                </p>
-              </div>
-              <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
-               text-sm font-Text2 md:justify-start"
-              >
-                <span className="pr-4 z-10">JavaFX</span>
-                <span className="pr-4 z-10">Java Concurrency</span>
-                <span className="pr-4 z-10">MultiThreading</span>
-                <span className="pr-4 z-10">MySQL</span>
-              </ul>
-              <div className="z-10 flex fle-row space-x-5 sm:pt-0 pt-2">
-                <GithubIcon link="https://github.com/hktitof/CallCenter" />
               </div>
             </div>
           </div>
