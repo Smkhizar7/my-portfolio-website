@@ -248,12 +248,12 @@ export default function SomethingIveBuilt() {
         {/* // ?  Project  1 Beym */}
         <div
           data-aos="fade-up"
-          className="relative flex flex-col xl:grid xl:grid-cols-12 w-full xl:h-[780px] xl:h-[540px] 2xl:h-[400px]"
+          className="relative flex flex-col xl:grid xl:grid-cols-12 w-full xl:min-h-[540px] 2xl:min-h-[400px]"
         >
           {/* Left image */}
           <div
             className="hidden bg-AAprimary z-10  py-4
-          xl:relative xl:absolute xl:grid grid-cols-12 w-full h-full  content-center "
+          xl:absolute xl:inset-0 xl:grid grid-cols-12 w-full h-full  content-center "
           >
             <div className="relative rounded w-full h-full col-span-12 xl:col-start-9 xl:col-span-4">
               <a
@@ -269,13 +269,13 @@ export default function SomethingIveBuilt() {
               <Img
                 src={"/BeymApp.png"}
                 alt={"Project Screen shot"}
-                className={`w-full rounded h-full object-contain`}
+                className={`w-full max-w-[240px] xl:max-h-[420px] mx-auto rounded object-contain`}
               />
             </div>
           </div>
 
           {/* right Content */}
-          <div className=" relative xl:absolute py-4 xl:grid xl:grid-cols-12 w-full h-full  content-center ">
+          <div className=" relative xl:absolute xl:inset-0 py-4 xl:grid xl:grid-cols-12 w-full h-full  content-center ">
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full bg-opacity-70 z-0 xl:hidden">
               <div className="relative w-full h-full">
@@ -380,12 +380,12 @@ export default function SomethingIveBuilt() {
         {/* // ?  Project  1 O16 Labs */}
         <div
           data-aos="fade-up"
-          className="relative flex flex-col xl:grid xl:grid-cols-12 w-full xl:h-[780px] xl:h-[540px] 2xl:h-[400px]"
+          className="relative flex flex-col xl:grid xl:grid-cols-12 w-full xl:min-h-[540px] 2xl:min-h-[400px]"
         >
           {/* Left image */}
           <div
             className="hidden bg-AAprimary z-10  py-4
-          xl:relative xl:absolute xl:grid grid-cols-12 w-full h-full  content-center "
+          xl:absolute xl:inset-0 xl:grid grid-cols-12 w-full h-full  content-center "
           >
             <div className="relative rounded w-full h-full col-span-12 xl:col-start-6 xl:col-span-7 xl:col-start-7 xl:col-span-6 2xl:col-start-8 2xl:col-span-5">
               <a
@@ -407,7 +407,7 @@ export default function SomethingIveBuilt() {
           </div>
 
           {/* right Content */}
-          <div className=" relative xl:absolute py-4 xl:grid xl:grid-cols-12 w-full h-full  content-center ">
+          <div className=" relative xl:absolute xl:inset-0 py-4 xl:grid xl:grid-cols-12 w-full h-full  content-center ">
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full bg-opacity-70 z-0 xl:hidden">
               <div className="relative w-full h-full">
@@ -496,7 +496,7 @@ export default function SomethingIveBuilt() {
           className="relative flex flex-col xl:grid xl:grid-cols-12 w-full xl:h-[900px] xl:h-[620px] 2xl:h-[500px] "
         >
           {/* Left image */}
-          <div className="hidden bg-AAprimary z-10  py-4 xl:relative xl:absolute xl:grid grid-cols-12 w-full h-full h-[400px] xl:h-full  content-center">
+          <div className="hidden bg-AAprimary z-10  py-4 xl:absolute xl:inset-0 xl:grid grid-cols-12 w-full h-full  content-center">
             <div className="relative rounded w-full h-full col-span-12 xl:col-span-4 ">
               {/* <Link href={"/typing"}>
                 <div
@@ -521,13 +521,13 @@ export default function SomethingIveBuilt() {
               <Img
                 src={"/ChefzoneApp-transparent.png"}
                 alt={"Project Screen shot"}
-                className={`w-full rounded h-full object-contain xl:h-[400px] xl:h-[600px] xl:h-[520px] 2xl:h-[400px]`}
+                className={`w-full rounded h-[400px] xl:h-[520px] 2xl:h-[400px] object-contain`}
               />
             </div>
           </div>
 
           {/* right Content */}
-          <div className=" relative xl:absolute py-4 xl:grid xl:grid-cols-12 w-full h-full  content-center ">
+          <div className=" relative xl:absolute xl:inset-0 py-4 xl:grid xl:grid-cols-12 w-full h-full  content-center ">
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full bg-opacity-70 z-0 xl:hidden">
               <div className="relative w-full h-full">
