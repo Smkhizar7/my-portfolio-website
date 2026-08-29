@@ -8,7 +8,6 @@ import ExternalLink from "../../Icons/ExternalLink";
 import { TextQuote } from "lucide-react";
 
 type ProjectSummaryCardProps = {
-  number: string;
   title: string;
   subtitle: string;
   description: React.ReactNode;
@@ -17,7 +16,6 @@ type ProjectSummaryCardProps = {
 };
 
 function ProjectSummaryCard({
-  number,
   title,
   subtitle,
   description,
@@ -27,7 +25,6 @@ function ProjectSummaryCard({
   const content = (
     <>
       <div className="flex flex-col gap-1">
-        <span className="font-mono text-sm text-AAsecondary">{number}</span>
         <span className="text-AAsecondary font-bold text-xl">
           {subtitle}
         </span>
@@ -95,7 +92,6 @@ export default function SomethingIveBuilt() {
       <div className="flex flex-col   xl:space-y-36 space-y-8 xl:space-y-28">
         <div className="flex flex-col gap-16" data-aos="fade-up">
           <ProjectSummaryCard
-            number="04."
             title="MyPlainTiff.ai"
             subtitle="Healthcare & case management"
             description={<>
@@ -148,7 +144,6 @@ export default function SomethingIveBuilt() {
             ]}
           />
           <ProjectSummaryCard
-            number="05."
             title="Property Swap"
             subtitle="mijnwoningruilen.nl"
             description={<>
@@ -194,7 +189,6 @@ export default function SomethingIveBuilt() {
             href="https://mijnwoningruilen.nl"
           />
           <ProjectSummaryCard
-            number="06."
             title="MySelfSquared"
             subtitle="Web & mobile wellbeing platform"
             description={<>
