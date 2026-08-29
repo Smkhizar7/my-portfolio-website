@@ -7,6 +7,63 @@ import GithubIcon from "../../Icons/GithubIconForSomethingIveBuild";
 import ExternalLink from "../../Icons/ExternalLink";
 import { TextQuote } from "lucide-react";
 
+type ProjectSummaryCardProps = {
+  number: string;
+  title: string;
+  subtitle: string;
+  description: React.ReactNode;
+  technologies: string[];
+  href?: string;
+};
+
+function ProjectSummaryCard({
+  number,
+  title,
+  subtitle,
+  description,
+  technologies,
+  href,
+}: ProjectSummaryCardProps) {
+  const content = (
+    <>
+      <div className="flex flex-col gap-1">
+        <span className="font-mono text-sm text-AAsecondary">{number}</span>
+        <span className="text-AAsecondary font-bold text-xl">
+          {subtitle}
+        </span>
+        <h3 className="text-gray-200 font-bold text-2xl">{title}</h3>
+      </div>
+      <div className="w-full bg-AAtertiary rounded-md p-4 sm:p-6">
+        <div className="text-gray-300 leading-relaxed space-y-4">{description}</div>
+      </div>
+      <ul className="flex flex-wrap gap-x-5 gap-y-2 text-gray-300 text-sm font-Text2">
+        {technologies.map((technology) => (
+          <li key={technology}>{technology}</li>
+        ))}
+      </ul>
+      {href && (
+        <span className="text-AAsecondary text-sm hover:underline">
+          Visit project
+        </span>
+      )}
+    </>
+  );
+
+  return href ? (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="flex flex-col gap-4 w-full max-w-4xl"
+    >
+      {content}
+    </a>
+  ) : (
+    <article className="flex flex-col gap-4 w-full max-w-4xl">
+      {content}
+    </article>
+  );
+}
 export default function SomethingIveBuilt() {
   const router = useRouter();
   return (
@@ -36,6 +93,157 @@ export default function SomethingIveBuilt() {
       </div>
 
       <div className="flex flex-col   xl:space-y-36 space-y-8 xl:space-y-28">
+        <div className="flex flex-col gap-16" data-aos="fade-up">
+          <ProjectSummaryCard
+            number="04."
+            title="MyPlainTiff.ai"
+            subtitle="Healthcare & case management"
+            description={<>
+              <p>
+                MyPlainTiff.ai is a cross-platform healthcare and
+                case-information management application that gives users one
+                structured workspace for health data, insurance benefits,
+                medical records, case documents, providers, action items, and
+                case timelines. The product is designed to reduce the
+                fragmentation caused by insurer portals, provider systems,
+                paper cards, email attachments, and conversations across
+                different organisations.
+              </p>
+              <p>
+                I worked on the core mobile experience across authentication,
+                onboarding, guided case authorisation, identity and OTP
+                verification, HIPAA and medical-record permissions, case
+                dashboards, document uploads, provider records, dependents,
+                sharing controls, audit history, and case-specific messaging.
+                The app uses Firebase Realtime Database for synchronised chat
+                and supports push notifications and reminders for important
+                case activity.
+              </p>
+              <p>
+                A major engineering area was healthcare connectivity. OAuth and
+                FHIR-based integrations connect supported health portals, while
+                provider-specific parsing normalises coverage and
+                ExplanationOfBenefit data into understandable benefit,
+                deductible, copay, claim, and payment views. I also implemented
+                the review-first insurance-card scanning flow, combining camera
+                or photo selection, AI-assisted OCR, insurer validation, image
+                processing, and user confirmation before sensitive data is
+                saved.
+              </p>
+              <p>
+                The shared React Native architecture combines TypeScript and
+                JavaScript, React Navigation, Redux Toolkit with persisted
+                state, an Axios repository layer, Firebase services, biometric
+                authentication, file selection, WebView/OAuth flows, and
+                native iOS and Android capabilities.
+              </p>
+            </>}
+            technologies={[
+              "React Native",
+              "TypeScript",
+              "Redux Toolkit",
+              "FHIR",
+              "Firebase",
+              "OpenAI",
+            ]}
+          />
+          <ProjectSummaryCard
+            number="05."
+            title="Property Swap"
+            subtitle="mijnwoningruilen.nl"
+            description={<>
+              <p>
+                Mijn Woningruilen, also known as Property Swap, is a Dutch
+                property-exchange marketplace built to help tenants move from
+                their current home to a better-fit home through a guided and
+                trusted exchange journey.
+              </p>
+              <p>
+                Users can create and manage a property advertisement with
+                photos, descriptions, housing details, current-home
+                information, and desired areas. They can pause or edit
+                listings, manage visitors, define alternative wishes, and
+                control the information shown to potential exchange partners.
+              </p>
+              <p>
+                The discovery experience combines place and location search,
+                Mapbox-powered maps with clustered listings, nearby facilities,
+                featured offers, favourites, saved searches, and compatible
+                matches. Users can open SEO-friendly property pages, compare
+                possible exchanges, express interest, and follow exchange
+                proposals.
+              </p>
+              <p>
+                I also worked across the supporting marketplace flows:
+                authenticated profiles, direct messaging, notifications,
+                reporting and safety guidance, multi-step listing forms,
+                subscription plans, paid advertisement boosts, payment
+                routes, and content-led SEO pages. The result is a responsive
+                web experience that connects search, matching, communication,
+                and listing administration in one product.
+              </p>
+            </>}
+            technologies={[
+              "Next.js",
+              "React",
+              "TypeScript",
+              "Redux Toolkit",
+              "Mapbox",
+              "Mollie",
+            ]}
+            href="https://mijnwoningruilen.nl"
+          />
+          <ProjectSummaryCard
+            number="06."
+            title="MySelfSquared"
+            subtitle="Web & mobile wellbeing platform"
+            description={<>
+              <p>
+                MySelfSquared is a wellbeing and personal-growth product
+                delivered across responsive web and mobile experiences. It
+                helps members discover educational content, build healthier
+                routines, complete daily check-ins, join structured
+                challenges, and understand progress through activity,
+                streak, neuron, and happiness insights.
+              </p>
+              <p>
+                The web platform brings together a personalised dashboard,
+                Growth Hub video and blog libraries, category and search
+                flows, challenge discovery, challenge participation, progress
+                history, tutorials, profile settings, notifications, and
+                subscription management. It also supports corporate
+                programmes with employee invitations, invitee management,
+                organisation profiles, and role-aware access.
+              </p>
+              <p>
+                The mobile application extends the same product journey with
+                React Native navigation, native video playback, captions,
+                transcripts, landscape viewing, image and document handling,
+                push notifications, deep links, and persistent local state.
+                Members can track watched videos and read articles, complete
+                check-ins, review challenge participation, and manage
+                subscriptions from a focused mobile experience.
+              </p>
+              <p>
+                Across both products, the implementation uses Redux Toolkit,
+                Redux Persist, RTK Query and domain-based service modules,
+                resilient token refresh handling, REST APIs, Stripe payment
+                flows, Firebase Cloud Messaging, reusable responsive
+                components, validated forms, charts, and role-specific
+                navigation.
+              </p>
+            </>}
+            technologies={[
+              "Next.js",
+              "React",
+              "React Native",
+              "Redux Toolkit",
+              "RTK Query",
+              "Stripe",
+              "Firebase",
+            ]}
+          />
+        </div>
         {/* // TODO : to here  */}
         {/* // ?  Project  1 Beym */}
         <div

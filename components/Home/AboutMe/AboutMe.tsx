@@ -193,16 +193,16 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
           </div>
 
           {/* Image Section (Mobile) */}
-          <div className="relative w-full h-56 sm:h-64 xl:hidden flex justify-center items-center">
-            <div className="absolute w-48 h-full rounded translate-x-5 translate-y-5 border-2 border-AAsecondary"></div>
-            <div className="absolute w-48 h-full rounded overflow-hidden">
+          <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:hidden flex justify-center items-center">
+            <div className="absolute w-48 sm:w-56 md:w-72 lg:w-80 h-full rounded translate-x-5 translate-y-5 border-2 border-AAsecondary"></div>
+            <div className="absolute w-48 sm:w-56 md:w-72 lg:w-80 h-full rounded overflow-hidden">
               <Img
                 src={"/img/Professional_photo.jpeg"}
                 className={"object-contain rounded-lg"}
                 alt="My Image Not Found"
               />
             </div>
-            <div className="absolute w-48 h-full bg-black opacity-30 md:opacity-60 rounded overflow-hidden"></div>
+            <div className="hidden"></div>
           </div>
         </div>
       </div>
