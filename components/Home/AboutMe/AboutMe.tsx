@@ -40,9 +40,9 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
         </div>
 
         {/* Paragraphs & Image */}
-        <div className="w-full flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
+        <div className="w-full flex flex-col xl:flex-row space-y-8 xl:space-y-0 xl:space-x-8">
           {/* Text Content */}
-          <div className="w-full lg:w-7/12 space-y-4 text-sm sm:text-base">
+          <div className="w-full xl:w-7/12 space-y-4 text-sm sm:text-base">
             <div className="font-Header text-gray-400 text-justify">
               I am Shaikh Muhammad Khizar, an application developer based in
               Karachi, Pakistan. I earned a{" "}
@@ -150,7 +150,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
               Here&apos;s what I&apos;m usually working with these days:
             </div>
             {/* Technologies List */}
-            <div className="font-Header tracking-wide flex flex-row flex-wrap gap-x-8 sm:gap-x-12 lg:gap-x-16 justify-start">
+            <div className="font-Header tracking-wide flex flex-row flex-wrap gap-x-8 sm:gap-x-12 xl:gap-x-16 justify-start">
               {technologies.map((techGroup, groupIndex) => (
                 <div
                   key={groupIndex}
@@ -180,7 +180,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
           </div>
 
           {/* Image Section (Desktop and Tablet) */}
-          <div className="group relative w-full max-w-xs h-64 sm:h-72 lg:w-96 lg:h-96 lg:block hidden mx-auto">
+          <div className="group relative w-full max-w-xs h-64 sm:h-72 xl:w-96 xl:h-96 xl:block hidden mx-auto">
             <div className="group-hover:translate-x-3 group-hover:translate-y-3 duration-300 absolute w-5/6 h-5/6 border-2 border-AAsecondary translate-x-5 translate-y-5 rounded"></div>
             <div className="absolute w-5/6 h-5/6 rounded overflow-hidden">
               <div className="absolute w-full h-full group-hover:opacity-0 bg-black opacity-30 duration-300 rounded overflow-hidden"></div>
@@ -193,7 +193,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
           </div>
 
           {/* Image Section (Mobile) */}
-          <div className="relative w-full h-56 sm:h-64 lg:hidden flex justify-center items-center">
+          <div className="relative w-full h-56 sm:h-64 xl:hidden flex justify-center items-center">
             <div className="absolute w-48 h-full rounded translate-x-5 translate-y-5 border-2 border-AAsecondary"></div>
             <div className="absolute w-48 h-full rounded overflow-hidden">
               <Img

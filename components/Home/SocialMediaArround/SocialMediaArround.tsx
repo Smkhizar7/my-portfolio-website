@@ -36,7 +36,7 @@ export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
             duration: props.finishedLoading ? 0 : 0.5,
           },
         }}
-        className="z-10 fixed bottom-0 left-0  hidden lg:flex flex-row px-12 items-center justify-between  "
+        className="z-10 fixed bottom-0 left-0  hidden xl:flex flex-row px-12 items-center justify-between  "
       >
         <div className="flex flex-col space-y-8 justify-center items-center">
           <div className="flex flex-col justify-center items-center space-y-5">
@@ -72,7 +72,7 @@ export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
             duration: props.finishedLoading ? 0 : 0.5,
           },
         }}
-        className="z-10 fixed bottom-0 -right-10 hidden lg:flex flex-row items-center justify-between"
+        className="z-10 fixed bottom-0 -right-10 hidden xl:flex flex-row items-center justify-between"
       >
         <div className="flex flex-col space-y-36 justify-center items-center">
           {/* Open Email on click */}
