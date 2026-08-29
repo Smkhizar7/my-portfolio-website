@@ -11,7 +11,7 @@ const MobileMenu = props => {
         initial={{ x: "100%" }}
         animate={props.rotate ? { x: "0" } : { x: "100%" }}
         transition={{ x: { duration: 0.4 } }}
-        className="w-full fixed h-screen flex md:hidden duration-300 z-20"
+        className="w-full fixed h-screen flex lg:hidden duration-300 z-20"
       >
         <div
           onClick={() => closeMenu()}

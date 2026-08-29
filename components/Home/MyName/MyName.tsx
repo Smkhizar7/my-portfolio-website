@@ -13,7 +13,7 @@ const MyName: React.FC<MyNameProps> = (props) => {
   return (
     <div
       className="h-full flex flex-col justify-center
-      px-8 2xl:px-72 xl:px-56 lg:px-32 md:px-28 sm:px-8 py-32 sm:py-52 relative" // Added relative for potential scroll indicator
+      px-6 sm:px-10 md:px-16 lg:px-32 xl:px-56 2xl:px-72 py-28 sm:py-40 lg:py-52 relative" // Added relative for potential scroll indicator
     >
       <motion.span
         initial={{ y: 10, opacity: 0 }}
@@ -45,7 +45,7 @@ const MyName: React.FC<MyNameProps> = (props) => {
             duration: props.finishedLoading ? 0 : 0.2,
           },
         }}
-        className="text-gray-300 font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4"
+        className="text-gray-300 font-bold text-4xl sm:text-5xl lg:text-7xl max-w-4xl mt-4"
       >
         Shaikh Muhammad Khizar.
       </motion.h1>
@@ -62,7 +62,7 @@ const MyName: React.FC<MyNameProps> = (props) => {
             duration: props.finishedLoading ? 0 : 0.2,
           },
         }}
-        className="text-gray-400 font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4"
+        className="text-gray-400 font-bold text-4xl sm:text-5xl lg:text-7xl max-w-4xl mt-4"
       >
         I turn ideas into reality.
       </motion.h2>
@@ -80,7 +80,7 @@ const MyName: React.FC<MyNameProps> = (props) => {
             duration: props.finishedLoading ? 0 : 0.2,
           },
         }}
-        className="text-gray-400 font-Header text-sm md:text-lg sm:text-md mt-10 tracking-wider"
+        className="text-gray-400 font-Header text-sm sm:text-base lg:text-lg mt-8 lg:mt-10 max-w-4xl tracking-wider"
       >
         As an{" "}
         <span className="text-AAsecondary keyword-hover">

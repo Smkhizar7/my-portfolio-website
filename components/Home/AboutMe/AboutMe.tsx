@@ -17,10 +17,10 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
     <div
       id="aboutSection"
       data-aos="fade-up"
-      className="snap-start flex flex-col items-center py-20 bg-AAprimary"
+      className="snap-start flex flex-col items-center py-16 sm:py-20 px-4 sm:px-6 bg-AAprimary"
     >
       {/* 0.1 About Me Title */}
-      <div className="flex flex-col space-y-8 px-4 sm:px-0 w-full sm:w-[500px] md:w-[700px] lg:w-[900px]">
+      <div className="flex flex-col space-y-8 w-full max-w-5xl">
         <div className="flex flex-row items-center">
           <div className="flex flex-row items-center mr-4">
             <ArrowIcon
@@ -40,9 +40,9 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
         </div>
 
         {/* Paragraphs & Image */}
-        <div className="w-full flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 sm:space-x-2">
+        <div className="w-full flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
           {/* Text Content */}
-          <div className="w-full md:w-7/12 space-y-4 sm:text-base text-sm">
+          <div className="w-full lg:w-7/12 space-y-4 text-sm sm:text-base">
             <div className="font-Header text-gray-400 text-justify">
               I am Shaikh Muhammad Khizar, an application developer based in
               Karachi, Pakistan. I earned a{" "}
@@ -150,7 +150,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
               Here&apos;s what I&apos;m usually working with these days:
             </div>
             {/* Technologies List */}
-            <div className="font-Header tracking-wide flex flex-row space-x-12 md:space-x-16 justify-center lg:justify-start">
+            <div className="font-Header tracking-wide flex flex-row flex-wrap gap-x-8 sm:gap-x-12 lg:gap-x-16 justify-start">
               {technologies.map((techGroup, groupIndex) => (
                 <div
                   key={groupIndex}
@@ -180,7 +180,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
           </div>
 
           {/* Image Section (Desktop and Tablet) */}
-          <div className="group relative lg:w-96 lg:h-96 md:w-72 md:h-72 md:block hidden">
+          <div className="group relative w-full max-w-xs h-64 sm:h-72 lg:w-96 lg:h-96 lg:block hidden mx-auto">
             <div className="group-hover:translate-x-3 group-hover:translate-y-3 duration-300 absolute w-5/6 h-5/6 border-2 border-AAsecondary translate-x-5 translate-y-5 rounded"></div>
             <div className="absolute w-5/6 h-5/6 rounded overflow-hidden">
               <div className="absolute w-full h-full group-hover:opacity-0 bg-black opacity-30 duration-300 rounded overflow-hidden"></div>
@@ -193,7 +193,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
           </div>
 
           {/* Image Section (Mobile) */}
-          <div className="relative w-full h-48 md:hidden flex justify-center items-center">
+          <div className="relative w-full h-56 sm:h-64 lg:hidden flex justify-center items-center">
             <div className="absolute w-48 h-full rounded translate-x-5 translate-y-5 border-2 border-AAsecondary"></div>
             <div className="absolute w-48 h-full rounded overflow-hidden">
               <Img

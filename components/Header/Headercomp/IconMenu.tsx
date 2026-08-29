@@ -3,7 +3,7 @@ import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
 const IconMenu = (props: { rotate; setRotate; setShowElement; ShowElement,finishedLoading }) => {
   return (
     <div
-      className="md:hidden  text-white space-y-2 left-0 hover:cursor-pointer mt-2"
+      className="lg:hidden text-white space-y-2 left-0 hover:cursor-pointer mt-2"
       onClick={() => {
         props.setRotate(!props.rotate);
         props.setShowElement(!props.ShowElement);

@@ -20,13 +20,13 @@ export default function WhereIHaveWorked() {
   return (
     <div
       data-aos="fade-up"
-      className="flex flex-col items-center justify-center py-24 space-y-12 bg-AAprimary"
+      className="flex flex-col items-center justify-center py-16 sm:py-24 px-4 space-y-10 sm:space-y-12 bg-AAprimary"
     >
       {/* // ? Title "Where I've Worked" */}
       <section className="flex flex-row items-center">
         <div className="flex flex-row items-center">
           <ArrowIcon
-            className={"flex-none h-4 md:h-6 w-4 md:w-5 text-AAsecondary"}
+            className={"flex-none h-4 lg:h-6 w-4 lg:w-5 text-AAsecondary"}
           />
           <span className="text-AAsecondary font-sans text-sm  sm:text-xl">
             {" "}
@@ -34,15 +34,15 @@ export default function WhereIHaveWorked() {
           </span>
         </div>
 
-        <span className="text-gray-200 opacity-85 font-bold tracking-wider text-lg md:text-2xl px-3">
+        <span className="text-gray-200 opacity-85 font-bold tracking-wider text-lg lg:text-2xl px-3">
           Where I&apos;ve Worked
         </span>
-        <div className="bg-gray-400 h-[0.2px] w-16 sm:w-44 md:w-80"></div>
+        <div className="bg-gray-400 h-[0.2px] w-16 sm:w-44 lg:w-80"></div>
       </section>
       {/* // ? Where I've Worked Content section */}
       <section
-        className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0
-      justify-center md:justify-center items-center md:items-start "
+        className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0
+      justify-center lg:justify-center items-center lg:items-start "
       >
         {/* // ? Left side of Where I've Worked, contains the bar and name of companies */}
         <CompaniesBar setDescriptionJob={setDescriptionJob} />
@@ -69,9 +69,9 @@ const CompaniesBar = (props) => {
             props.CompanyNameBackgroundColorGreen
           );
         }}
-        className={`flex-none sm:text-sm text-xs text-center md:text-left  hover:text-AAsecondary
-             hover:bg-ResumeButtonHover rounded  font-mono  
-             py-3 md:pl-6 md:px-4 md:w-44 w-32 duration-500
+        className={`flex-none sm:text-sm text-xs text-center lg:text-left  hover:text-AAsecondary
+             hover:bg-ResumeButtonHover rounded  font-mono
+             py-3 lg:pl-6 lg:px-4 lg:w-44 w-32 duration-500
              ${
                companyNameBackgroundColorGreen[
                  props.ButtonOrderOfcompanyNameBackgroundColorGreen
@@ -88,25 +88,25 @@ const CompaniesBar = (props) => {
   return (
     <div
       id="WhereIhaveWorkedSection"
-      className=" flex flex-col md:flex-row  w-screen lg:w-auto 
-      overflow-auto scrollbar-hide md:overflow-hidden pb-4 md:pb-0 justify-start
+      className=" flex flex-col lg:flex-row  w-full lg:w-auto
+      overflow-x-auto scrollbar-hide lg:overflow-hidden pb-4 lg:pb-0 justify-start
        sm:justify-center items-start sm:items-center"
     >
       {/* // ? left bar Holder */}
       <div
-        className=" hidden md:block bg-gray-500 relative h-0.5 w-34 md:h-[88px] translate-y-1 md:w-0.5  
-        rounded md:order-1 order-2  "
+        className=" hidden lg:block bg-gray-500 relative h-[88px] w-0.5 translate-y-1
+        rounded lg:order-1 order-2  "
       >
         {/* // ? animated left bar */}
         <motion.div
           animate={{ y: barPosition }}
           // ref={barRef}
-          className={`absolute w-10 h-0.5 md:w-0.5 md:h-12 rounded bg-AAsecondary `}
+          className={`absolute w-10 h-0.5 lg:w-0.5 lg:h-12 rounded bg-AAsecondary `}
         ></motion.div>
       </div>
       {/* // ? Companies name as buttons */}
-      <div className="flex flex-col md:order-2 order-1 space-y-1 pl-8 md:pl-0 ">
-        <div className="flex flex-row md:flex-col">
+      <div className="flex flex-col lg:order-2 order-1 space-y-1 pl-0 ">
+        <div className="flex flex-row lg:flex-col">
           <CompanyButton
             ButtonOrderOfcompanyNameBackgroundColorGreen={0}
             CompanyName="O16Labs"
@@ -126,7 +126,7 @@ const CompaniesBar = (props) => {
             setDescriptionJob={props.setDescriptionJob}
           />
         </div>
-        <div className="block md:hidden h-0.5 rounded bg-gray-500">
+        <div className="block lg:hidden h-0.5 rounded bg-gray-500 w-full">
           <motion.div
             animate={{ x: barAbovePosition }}
             className="w-[128px] h-0.5 rounded bg-AAsecondary"
