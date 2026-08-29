@@ -23,7 +23,7 @@ export default function WhereIHaveWorked() {
       className="flex flex-col items-center justify-center py-16 sm:py-24 px-4 space-y-10 sm:space-y-12 bg-AAprimary"
     >
       {/* // ? Title "Where I've Worked" */}
-      <section className="flex flex-row items-center">
+      <section className="flex flex-row items-center w-full max-w-5xl">
         <div className="flex flex-row items-center">
           <ArrowIcon
             className={"flex-none h-4 xl:h-6 w-4 xl:w-5 text-AAsecondary"}
@@ -41,8 +41,7 @@ export default function WhereIHaveWorked() {
       </section>
       {/* // ? Where I've Worked Content section */}
       <section
-        className="flex flex-col xl:flex-row xl:space-x-4 space-y-4 xl:space-y-0
-      justify-center xl:justify-center items-center xl:items-start "
+        className="flex flex-col xl:flex-row xl:space-x-4 space-y-4 xl:space-y-0 justify-start items-start w-full max-w-5xl"
       >
         {/* // ? Left side of Where I've Worked, contains the bar and name of companies */}
         <CompaniesBar setDescriptionJob={setDescriptionJob} />
@@ -90,7 +89,7 @@ const CompaniesBar = (props) => {
       id="WhereIhaveWorkedSection"
       className=" flex flex-col xl:flex-row  w-full xl:w-auto
       overflow-x-auto scrollbar-hide xl:overflow-hidden pb-4 xl:pb-0 justify-start
-       sm:justify-center items-start sm:items-center"
+       items-start"
     >
       {/* // ? left bar Holder */}
       <div
