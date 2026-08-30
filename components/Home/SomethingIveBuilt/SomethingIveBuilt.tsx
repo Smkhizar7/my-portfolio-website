@@ -393,6 +393,22 @@ export default function SomethingIveBuilt() {
               "Stripe",
               "Firebase",
             ]}
+            images={[
+              "/projects/myselfsquared/myselfsquared-1.png",
+              "/projects/myselfsquared/myselfsquared-2.png",
+              "/projects/myselfsquared/myselfsquared-3.png",
+              "/projects/myselfsquared/myselfsquared-4.png",
+              "/projects/myselfsquared/myselfsquared-5.png",
+              "/projects/myselfsquared/myselfsquared-6.png",
+              "/projects/myselfsquared/myselfsquared-7.png",
+              "/projects/myselfsquared/myselfsquared-8.png",
+              "/projects/myselfsquared/myselfsquared-9.png",
+              "/projects/myselfsquared/myselfsquared-10.png",
+              "/projects/myselfsquared/myselfsquared-11.png",
+              "/projects/myselfsquared/myselfsquared-12.png",
+              "/projects/myselfsquared/myselfsquared-13.png",
+            ]}
+            imageAlt="MySelfSquared app screenshots"
           />
         </div>
         {/* // TODO : to here  */}
