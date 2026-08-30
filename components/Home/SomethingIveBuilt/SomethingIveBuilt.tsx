@@ -157,13 +157,6 @@ function ProjectSummaryCard({
       <div className="w-full bg-AAtertiary rounded-md p-4 sm:p-6">
         <div className="text-gray-300 leading-relaxed space-y-4">{description}</div>
       </div>
-      {images?.length ? (
-        <ProjectImageViewer
-          images={images}
-          alt={imageAlt || `${title} project screenshot`}
-          className="h-64 w-full rounded-md bg-AAprimary p-2 sm:h-80 lg:h-96"
-        />
-      ) : null}
       <ul className="flex flex-wrap gap-x-5 gap-y-2 text-gray-300 text-sm font-Text2">
         {technologies.map((technology) => (
           <li key={technology}>{technology}</li>
@@ -180,6 +173,13 @@ function ProjectSummaryCard({
           </span>
         )
       )}
+      {images?.length ? (
+        <ProjectImageViewer
+          images={images}
+          alt={imageAlt || `${title} project screenshot`}
+          className="mx-auto h-72 w-full max-w-5xl rounded-md bg-AAprimary p-2 sm:h-96 lg:h-[520px]"
+        />
+      ) : null}
     </>
   );
 
@@ -188,12 +188,12 @@ function ProjectSummaryCard({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="flex flex-col gap-4 w-full max-w-4xl"
+      className="flex w-full flex-col gap-4"
     >
       {content}
     </a>
   ) : (
-    <article className="flex flex-col gap-4 w-full max-w-4xl">
+    <article className="flex w-full flex-col gap-4">
       {content}
     </article>
   );
@@ -230,7 +230,7 @@ export default function SomethingIveBuilt() {
         <div className="flex flex-col gap-16" data-aos="fade-up">
           <ProjectSummaryCard
             title="MyPlainTiff.ai"
-            subtitle="Healthcare & case management"
+            subtitle="myplaintiff.ai"
             description={<>
               <p>
                 MyPlainTiff.ai is a cross-platform healthcare and
@@ -347,7 +347,7 @@ export default function SomethingIveBuilt() {
           />
           <ProjectSummaryCard
             title="MySelfSquared"
-            subtitle="Web & mobile wellbeing platform"
+            subtitle="myselfsquared.com"
             description={<>
               <p>
                 MySelfSquared is a wellbeing and personal-growth product
