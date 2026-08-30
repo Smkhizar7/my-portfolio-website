@@ -58,7 +58,7 @@ function ProjectImageViewer({
           alt={alt}
           className="h-full w-full rounded object-contain"
         />
-        <span className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-AAtertiary px-3 py-1 text-xs font-semibold text-white shadow-lg sm:text-sm">
+        <span className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-AAsecondary px-3 py-1 text-xs font-semibold text-AAprimary shadow-lg sm:text-sm">
           {images.length} screenshots · Click to view
         </span>
       </button>
