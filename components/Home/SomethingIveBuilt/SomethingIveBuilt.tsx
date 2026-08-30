@@ -58,6 +58,9 @@ function ProjectImageViewer({
           alt={alt}
           className="h-full w-full rounded object-contain"
         />
+        <span className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-AAtertiary px-3 py-1 text-xs font-semibold text-white shadow-lg sm:text-sm">
+          {images.length} screenshots · Click to view
+        </span>
       </button>
 
       {isOpen && typeof document !== "undefined"
@@ -145,13 +148,6 @@ function ProjectSummaryCard({
 }: ProjectSummaryCardProps) {
   const content = (
     <>
-      {images?.length ? (
-        <ProjectImageViewer
-          images={images}
-          alt={imageAlt || `${title} project screenshot`}
-          className="h-64 w-full rounded-md bg-AAprimary p-2 sm:h-80 lg:h-96"
-        />
-      ) : null}
       <div className="flex flex-col gap-1">
         <span className="text-AAsecondary font-bold text-xl">
           {subtitle}
@@ -161,20 +157,33 @@ function ProjectSummaryCard({
       <div className="w-full bg-AAtertiary rounded-md p-4 sm:p-6">
         <div className="text-gray-300 leading-relaxed space-y-4">{description}</div>
       </div>
+      {images?.length ? (
+        <ProjectImageViewer
+          images={images}
+          alt={imageAlt || `${title} project screenshot`}
+          className="h-64 w-full rounded-md bg-AAprimary p-2 sm:h-80 lg:h-96"
+        />
+      ) : null}
       <ul className="flex flex-wrap gap-x-5 gap-y-2 text-gray-300 text-sm font-Text2">
         {technologies.map((technology) => (
           <li key={technology}>{technology}</li>
         ))}
       </ul>
       {href && (
-        <span className="text-AAsecondary text-sm hover:underline">
-          Visit project
-        </span>
+        images?.length ? (
+          <a href={href} target="_blank" rel="noreferrer" className="text-AAsecondary text-sm hover:underline">
+            Visit project
+          </a>
+        ) : (
+          <span className="text-AAsecondary text-sm hover:underline">
+            Visit project
+          </span>
+        )
       )}
     </>
   );
 
-  return href ? (
+  return href && !images?.length ? (
     <a
       href={href}
       target="_blank"
@@ -282,6 +291,7 @@ export default function SomethingIveBuilt() {
               "/projects/myplaintiff/Image24.jpeg",
             ]}
             imageAlt="MyPlainTiff healthcare case management app screenshots"
+            href="https://myplaintiff.ai/"
           />
           <ProjectSummaryCard
             title="Property Swap"
