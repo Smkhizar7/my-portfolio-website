@@ -409,6 +409,7 @@ export default function SomethingIveBuilt() {
               "/projects/myselfsquared/myselfsquared-13.png",
             ]}
             imageAlt="MySelfSquared app screenshots"
+            href="https://myselfsquared.com/"
           />
         </div>
         {/* // TODO : to here  */}
