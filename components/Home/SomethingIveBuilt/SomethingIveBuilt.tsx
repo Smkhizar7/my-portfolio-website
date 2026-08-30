@@ -1,12 +1,129 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { createPortal } from "react-dom";
 import ArrowIcon from "../../Icons/ArrowIcon";
 import Img from "../../smallComp/image/Img";
 import GithubIcon from "../../Icons/GithubIconForSomethingIveBuild";
 import ExternalLink from "../../Icons/ExternalLink";
 import { TextQuote } from "lucide-react";
 
+type ProjectImageViewerProps = {
+  images: string[];
+  alt: string;
+  className?: string;
+};
+
+function ProjectImageViewer({
+  images,
+  alt,
+  className = "",
+}: ProjectImageViewerProps) {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+      if (event.key === "ArrowLeft") {
+        setActiveIndex((index) => (index - 1 + images.length) % images.length);
+      }
+      if (event.key === "ArrowRight") {
+        setActiveIndex((index) => (index + 1) % images.length);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen, images.length]);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setIsOpen(true)}
+        aria-label={"Open " + alt + " in image viewer"}
+        className={"group relative z-20 block cursor-zoom-in " + className}
+      >
+        <Img
+          src={images[0]}
+          alt={alt}
+          className="h-full w-full rounded object-contain"
+        />
+      </button>
+
+      {isOpen && typeof document !== "undefined"
+        ? createPortal(
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-label={alt + " image viewer"}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-black p-4 sm:p-8"
+            >
+              <button
+                type="button"
+                aria-label="Close image viewer"
+                onClick={() => setIsOpen(false)}
+                className="absolute right-4 top-4 z-10 rounded border border-AAsecondary px-3 py-2 text-xl text-AAsecondary"
+              >
+                X
+              </button>
+              <div
+                onClick={(event) => event.stopPropagation()}
+                className="relative flex h-full w-full items-center justify-center"
+              >
+                <Img
+                  src={images[activeIndex]}
+                  alt={alt + " " + (activeIndex + 1)}
+                  className="max-h-full max-w-full object-contain"
+                />
+
+                {images.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      aria-label="Previous image"
+                      onClick={() =>
+                        setActiveIndex(
+                          (index) => (index - 1 + images.length) % images.length
+                        )
+                      }
+                      className="absolute left-2 rounded-full bg-AAtertiary px-4 py-2 text-2xl text-AAsecondary sm:left-6"
+                    >
+                      &lt;
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="Next image"
+                      onClick={() =>
+                        setActiveIndex((index) => (index + 1) % images.length)
+                      }
+                      className="absolute right-2 rounded-full bg-AAtertiary px-4 py-2 text-2xl text-AAsecondary sm:right-6"
+                    >
+                      &gt;
+                    </button>
+                    <span className="absolute bottom-2 rounded bg-AAtertiary px-3 py-1 text-sm text-white">
+                      {activeIndex + 1} / {images.length}
+                    </span>
+                  </>
+                )}
+              </div>
+            </div>,
+            document.body
+          )
+        : null}
+    </>
+  );
+}
 type ProjectSummaryCardProps = {
   title: string;
   subtitle: string;
@@ -242,12 +359,11 @@ export default function SomethingIveBuilt() {
         {/* // ?  Project  1 Beym */}
         <div
           data-aos="fade-up"
-          className="relative flex flex-col xl:grid xl:grid-cols-12 w-full xl:min-h-[540px] 2xl:min-h-[400px]"
+          className="relative flex flex-col w-full"
         >
           {/* Left image */}
           <div
-            className="hidden bg-AAprimary z-10  py-4
-          xl:absolute xl:inset-0 xl:grid grid-cols-12 w-full h-full  content-center "
+            className="hidden xl:flex order-2 relative w-full h-[520px] justify-center items-center bg-AAprimary z-10 py-4"
           >
             <div className="relative rounded w-full h-full col-span-12 xl:col-start-9 xl:col-span-4">
               <a
@@ -260,26 +376,26 @@ export default function SomethingIveBuilt() {
            transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"
                 ></div>
               </a>
-              <Img
-                src={"/BeymApp.png"}
-                alt={"Project Screen shot"}
-                className={`w-full max-w-[240px] xl:max-h-[420px] mx-auto rounded object-contain`}
+              <ProjectImageViewer
+                images={["/BeymApp.png"]}
+                alt="Beym project screenshot"
+                className="h-full w-full max-w-[240px] xl:max-h-[420px] mx-auto"
               />
             </div>
           </div>
 
           {/* right Content */}
-          <div className=" relative xl:absolute xl:inset-0 py-4 xl:grid xl:grid-cols-12 w-full h-full  content-center ">
+          <div className="relative order-1 py-4 w-full">
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full bg-opacity-70 z-0 xl:hidden">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-60 z-10"></div>
-                <Img
-                  src={"/BeymApp.png"}
-                  alt={"Project Screen shot"}
-                  className={`w-full h-full object-contain`}
-                />
+                <ProjectImageViewer
+                images={["/BeymApp.png"]}
+                alt="Beym project screenshot"
+                className="h-full w-full max-w-[240px] xl:max-h-[420px] mx-auto"
+              />
               </div>
             </div>
 
@@ -374,12 +490,11 @@ export default function SomethingIveBuilt() {
         {/* // ?  Project  1 O16 Labs */}
         <div
           data-aos="fade-up"
-          className="relative flex flex-col xl:grid xl:grid-cols-12 w-full xl:min-h-[540px] 2xl:min-h-[400px]"
+          className="relative flex flex-col w-full"
         >
           {/* Left image */}
           <div
-            className="hidden bg-AAprimary z-10  py-4
-          xl:absolute xl:inset-0 xl:grid grid-cols-12 w-full h-full  content-center "
+            className="hidden xl:flex order-2 relative w-full h-[520px] justify-center items-center bg-AAprimary z-10 py-4"
           >
             <div className="relative rounded w-full h-full col-span-12 xl:col-start-6 xl:col-span-7 xl:col-start-7 xl:col-span-6 2xl:col-start-8 2xl:col-span-5">
               <a
@@ -392,26 +507,26 @@ export default function SomethingIveBuilt() {
            transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"
                 ></div>
               </a>
-              <Img
-                src={"/O16Labs.png"}
-                alt={"Project Screen shot"}
-                className={`w-full rounded h-full object-contain`}
+              <ProjectImageViewer
+                images={["/O16Labs.png"]}
+                alt="O16 Labs project screenshot"
+                className="h-full w-full"
               />
             </div>
           </div>
 
           {/* right Content */}
-          <div className=" relative xl:absolute xl:inset-0 py-4 xl:grid xl:grid-cols-12 w-full h-full  content-center ">
+          <div className="relative order-1 py-4 w-full">
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full bg-opacity-70 z-0 xl:hidden">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-60 z-10"></div>
-                <Img
-                  src={"/O16Labs.png"}
-                  alt={"Project Screen shot"}
-                  className={`w-full h-full object-contain`}
-                />
+                <ProjectImageViewer
+                images={["/O16Labs.png"]}
+                alt="O16 Labs project screenshot"
+                className="h-full w-full"
+              />
               </div>
             </div>
 
@@ -487,10 +602,10 @@ export default function SomethingIveBuilt() {
 
         <div
           data-aos="fade-up"
-          className="relative flex flex-col xl:grid xl:grid-cols-12 w-full xl:h-[900px] xl:h-[620px] 2xl:h-[500px] "
+          className="relative flex flex-col w-full"
         >
           {/* Left image */}
-          <div className="hidden bg-AAprimary z-10  py-4 xl:absolute xl:inset-0 xl:grid grid-cols-12 w-full h-full  content-center">
+          <div className="hidden xl:flex order-2 relative w-full h-[520px] justify-center items-center bg-AAprimary z-10 py-4">
             <div className="relative rounded w-full h-full col-span-12 xl:col-span-4 ">
               {/* <Link href={"/typing"}>
                 <div
@@ -512,26 +627,26 @@ export default function SomethingIveBuilt() {
                 ></div>
               </a>
 
-              <Img
-                src={"/ChefzoneApp-transparent.png"}
-                alt={"Project Screen shot"}
-                className={`w-full rounded h-[400px] xl:h-[520px] 2xl:h-[400px] object-contain`}
+              <ProjectImageViewer
+                images={["/ChefzoneApp-transparent.png", "/ChefzoneApp.png"]}
+                alt="ChefZone project screenshot"
+                className="h-[400px] w-full xl:h-[520px] 2xl:h-[400px]"
               />
             </div>
           </div>
 
           {/* right Content */}
-          <div className=" relative xl:absolute xl:inset-0 py-4 xl:grid xl:grid-cols-12 w-full h-full  content-center ">
+          <div className="relative order-1 py-4 w-full">
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full bg-opacity-70 z-0 xl:hidden">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-AAsecondary opacity-10 z-10"></div>
                 <div className="absolute w-full h-full bg-AAprimary opacity-60 z-10"></div>
-                <Img
-                  src={"/ChefzoneApp-transparent.png"}
-                  alt={"Project Screen shot"}
-                  className={`w-full h-full object-contain`}
-                />
+                <ProjectImageViewer
+                images={["/ChefzoneApp-transparent.png", "/ChefzoneApp.png"]}
+                alt="ChefZone project screenshot"
+                className="h-[400px] w-full xl:h-[520px] 2xl:h-[400px]"
+              />
               </div>
             </div>
 
