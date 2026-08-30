@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { createPortal } from "react-dom";
@@ -130,6 +130,8 @@ type ProjectSummaryCardProps = {
   description: React.ReactNode;
   technologies: string[];
   href?: string;
+  images?: string[];
+  imageAlt?: string;
 };
 
 function ProjectSummaryCard({
@@ -138,9 +140,18 @@ function ProjectSummaryCard({
   description,
   technologies,
   href,
+  images,
+  imageAlt,
 }: ProjectSummaryCardProps) {
   const content = (
     <>
+      {images?.length ? (
+        <ProjectImageViewer
+          images={images}
+          alt={imageAlt || `${title} project screenshot`}
+          className="h-64 w-full rounded-md bg-AAprimary p-2 sm:h-80 lg:h-96"
+        />
+      ) : null}
       <div className="flex flex-col gap-1">
         <span className="text-AAsecondary font-bold text-xl">
           {subtitle}
@@ -259,6 +270,18 @@ export default function SomethingIveBuilt() {
               "Firebase",
               "OpenAI",
             ]}
+            images={[
+              "/projects/myplaintiff/Image1.jpeg",
+              "/projects/myplaintiff/Image3.jpeg",
+              "/projects/myplaintiff/Image5.jpeg",
+              "/projects/myplaintiff/Image11.jpeg",
+              "/projects/myplaintiff/Image12.jpeg",
+              "/projects/myplaintiff/Image16.jpeg",
+              "/projects/myplaintiff/Image18.jpeg",
+              "/projects/myplaintiff/Image22.jpeg",
+              "/projects/myplaintiff/Image24.jpeg",
+            ]}
+            imageAlt="MyPlainTiff healthcare case management app screenshots"
           />
           <ProjectSummaryCard
             title="Property Swap"
