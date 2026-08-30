@@ -336,6 +336,13 @@ export default function SomethingIveBuilt() {
               "Mapbox",
               "Mollie",
             ]}
+            images={[
+              "/projects/mijnwoningruilen/mijnwoningruilen-1.png",
+              "/projects/mijnwoningruilen/mijnwoningruilen-2.png",
+              "/projects/mijnwoningruilen/mijnwoningruilen-3.png",
+              "/projects/mijnwoningruilen/mijnwoningruilen-4.png",
+            ]}
+            imageAlt="MijnWoningruilen Property Swap project screenshots"
             href="https://mijnwoningruilen.nl"
           />
           <ProjectSummaryCard
